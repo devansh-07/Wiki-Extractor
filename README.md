@@ -1,6 +1,6 @@
 ## Wiki-Extractor
 This is a simple GUI tool completely written in Python which extracts data from Wikipedia.
-It uses [wikipedia](https://pypi.org/project/wikipedia/) module to get data and [tkinter](https://docs.python.org/3/library/tk.html) to show it to you.
+It uses [wikipedia](https://pypi.org/project/wikipedia/) module to get data and [tkinter](https://docs.python.org/3/library/tk.html) to display it.
 You can also save the data in a text or PDF file (requires [FPDF](https://pypi.org/project/fpdf/)) and also search for related keywords.
 
 ## Details
@@ -18,8 +18,10 @@ In order to speed up this process and provide good user experience:
 ## How to use
 With all the requirements fulfilled, you just need to run the script:
 
-	python3 wiki_extractor.py
+	(sudo) python3 wiki_extractor.py
 
-and the GUI will open. Just enter the word you want to search for and hit Enter or click Search Button.
+and the GUI will open.
+
+Just enter the word you want to search for and hit Enter (or click Search button).
 After a few seconds, result will be in the Text box and some related words in the list.
 If you want to search for an item from the list, simply click on that item and the tool will search for it. To save the data, click on the `Text file` or `PDF file` button.
