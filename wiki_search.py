@@ -22,6 +22,7 @@ def look(event):
 def get_info(wrd):
     global flag
     rltd = []
+    related.delete(0, END)
     if not wrd:
         msg = "\t   Enter something in searchbox!"
         flag = 0
@@ -47,7 +48,7 @@ def helper():
     ans, rltd = get_info(word)
     ans = ans.replace(" ( (listen))", "")
 
-def start_thrd():
+def start_thrd(event=None):
     global thrd
     thrd = threading.Thread(target=helper)
     thrd.daemon = True
@@ -78,7 +79,7 @@ def insert_ans():
     answer.config(state='disabled')
     related.delete(0, END)
     for i, v in enumerate(rltd):
-        related.insert(i, ' '+v)
+        related.insert(i, v)
 
 def save_txt():
     if flag == 1:
@@ -137,10 +138,10 @@ myfont = Font(family="Trebuchet MS", size=10)
 ###### Frames
 
 frame1 = Frame(root, bg="#292929")
-frame1.pack(padx=10, pady=5)
+frame1.pack(padx=10, pady=(10, 0))
 
 frame2 = Frame(root, bg="#292929")
-frame2.pack(padx=6, pady=(10, 0))
+frame2.pack(padx=6, pady=(5, 0))
 
 entFr = Frame(frame2, bg="#292929")
 entFr.pack(pady=(5, 5))
@@ -162,6 +163,7 @@ phrase.configure()
 
 button = Button(frame1, text="Search", fg="#ffffff", bg="#001010", command=start_thrd)
 button.pack(side=LEFT, padx=5, pady=5)
+root.bind('<Return>', start_thrd)
 
 scrollbar = ttk.Scrollbar(entFr)
 scrollbar.pack(side = RIGHT, fill=Y)
