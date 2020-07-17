@@ -135,8 +135,6 @@ root.geometry("400x510+400+400")
 ttk.Style().configure("TButton", background="black")
 myfont = Font(family="Trebuchet MS", size=10)
 
-###### Frames
-
 frame1 = Frame(root, bg="#292929")
 frame1.pack(padx=10, pady=(10, 0))
 
@@ -151,8 +149,6 @@ frame3.pack(side=LEFT, padx=10, pady=(0, 20))
 
 frame4 = Frame(root, bg="#292929")
 frame4.pack(side=RIGHT, pady=(0, 20))
-
-######
 
 l = Label(root, text="- Dsoni01  ", pady=5, padx=5, fg="#7a7a7a", bg="#292929")
 l.place(relx=1.0, rely=1.0, x=0, y=0, anchor="se")
